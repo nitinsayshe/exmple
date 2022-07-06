@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            background-color: blueviolet;
+            font-family: "Roboto";
+            font-weight: 600;
+        }
+
+        .form-container {
+            text-align: center;
+            background-color: rgb(235, 230, 230);
+            height: 230px;
+            margin: 50px;
+            border-radius: 8px;
+            padding-top: 50px;
+        }
+        #sorted_array{
+            font-size: x-large;
+        }
+        .button{
+            background-color: rgb(180, 139, 219);
+            border: none;
+            font-size:small;
+            color: white;
+            height: 25px;
+            width: 180px;
+            border-radius: 8px;
+            box-shadow: rgba(68, 68, 114, 0.308) 0px 7px 29px 0px;
+
+        }
+        .button-asc,.button-dsc{
+            background-color: rgb(180, 139, 219);
+            border: none;
+            font-size:small;
+            color: white;
+            height: 25px;
+            width: 90px;
+            border-radius: 8px;
+            box-shadow: rgba(68, 68, 114, 0.308) 0px 7px 29px 0px;
+        }
+        #close{
+            background-color: rgb(180, 139, 219);
+            border: none;
+            color: white;
+            height: 25px;
+            width: 40px;
+            border-radius: 8px;
+            box-shadow: rgba(68, 68, 114, 0.308) 0px 7px 29px 0px;
+        }
+    </style>
+    <script type="text/javascript">
+        var arr = []
+        function myFunction(form) {
+            arr.push(form.number.value)
+            form.array.value = arr
+            form.number.value = ""
+        }
+        function sortAsc() {
+            arr.sort(function (a, b) { return a - b });
+            document.getElementById("sorted_array").innerHTML = arr
+        }
+        function sortDesc() {
+            arr.sort(function (a, b) { return b - a });
+            document.getElementById("sorted_array").innerHTML = arr
+
+        }
+        function clear(form){
+            arr=[]
+            form.array.value=""
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+    <form class="form-container">   
+        
+        Enter Number :
+        <input type="number" name="number">
+        <input class="button" type="button" value="Add Number to Array" onclick="myFunction(this.form)">
+        <button id="close"><i class="fas fa-times" onclick="clear(this.form)"></i></button>
+        <br><br>
+        Your Array : [
+        <input type="text" name="array" id="array" disabled> ]
+        <input class="button-asc" type="button" value="Asc" onclick="sortAsc()">
+        <input class="button-dsc" type="button" value="Desc" onclick="sortDesc()">
+        <br><br>
+        Sorted Array:
+        <br>
+        <p id="sorted_array"></p>
+    </form>
+
+
+
+
+</body>
+
+</html>

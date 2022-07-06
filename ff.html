@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sample JavaScript</title>
+	
+	<script type="text/javascript"  >
+
+		function convertCurrency(form) {
+			form.rupee.value = form.dollar.value * 74 
+			console.log(form.dollar.value)
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	Convert dollar to rupee
+	<form >
+		Enter dollars:
+		<input type="text" name="dollar" > //53
+		<br />
+        <br />
+
+		
+
+		<br />
+        <br />
+		In Rupee:
+		<input type="text" name="rupee" >
+
+        <input type="button" value="Calculate" onclick="convertCurrency(this.form)">
+	</form>
+
+
+</body>
+
+</html>
